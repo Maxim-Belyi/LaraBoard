@@ -11,7 +11,14 @@ class Location extends Model
     /** @use HasFactory<\Database\Factories\LocationFactory> */
     use HasFactory;
 
-    public function WeatherRecord(): HasMany {
+    protected $fillable = [
+        'city',
+        'latitude',
+        'longitude',
+        'is_active',
+    ];
+
+    public function weatherRecords(): HasMany {
         return $this->hasMany(WeatherRecord::class);
     }
 }

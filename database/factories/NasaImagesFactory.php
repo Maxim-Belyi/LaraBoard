@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\NasaImages;
+use App\Models\NasaImage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<NasaImages>
+ * @extends Factory<NasaImage>
  */
-class NasaImagesFactory extends Factory
+class NasaImageFactory extends Factory
 {
     /**
      * Define the model's default state.

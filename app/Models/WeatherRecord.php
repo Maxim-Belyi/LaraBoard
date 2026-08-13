@@ -10,9 +10,21 @@ class WeatherRecord extends Model
 {
     /** @use HasFactory<\Database\Factories\WeatherRecordFactory> */
     use HasFactory;
+     protected $fillable = [
+        'location_id',
+        'temp',
+        'feels_like',
+        'pressure',
+        'humidity',
+        'wind_speed',
+        'description',
+        'icon',
+        'recorded_at',
+    ];
 
     public function location(): BelongsTo
     {
         return $this->belongsTo(Location::class);
     }
+
 }

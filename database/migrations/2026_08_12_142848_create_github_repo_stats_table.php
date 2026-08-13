@@ -29,6 +29,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('github_repo_statuses');
+        Schema::dropIfExists('github_repo_stats');
     }
 };
