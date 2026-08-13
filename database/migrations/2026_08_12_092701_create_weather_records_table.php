@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Location;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +13,7 @@ return new class extends Migration {
         Schema::create('weather_records', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignIdFor(Location::class)
+            $table->foreignId('location_id')
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
@@ -26,6 +25,8 @@ return new class extends Migration {
             $table->string('description');
             $table->string('icon');
             $table->timestamp('recorded_at');
+
+            $table->index(['location_id', 'recorded_at']);
         });
     }
 

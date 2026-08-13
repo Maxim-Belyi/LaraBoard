@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\GitHubRepository;
+use App\Models\NasaImages;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<GitHubRepository>
+ * @extends Factory<NasaImages>
  */
-class GitHubFactory extends Factory
+class NasaImagesFactory extends Factory
 {
     /**
      * Define the model's default state.

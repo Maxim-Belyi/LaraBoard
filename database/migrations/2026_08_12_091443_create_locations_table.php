@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Ramsey\Uuid\Type\Decimal;
 
 return new class extends Migration {
     /**
@@ -15,8 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->timestamps();
             $table->string('city');
-            $table->point('coordinates');
-            $table->spatialIndex('coordinates');
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longitude', 11, 8);
             $table->boolean('is_active')->default(true);
         });
     }

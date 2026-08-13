@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('nasa_topics', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('query_text')->unique();
+            $table->boolean('is_active')->default(true);
+            
         });
     }
 

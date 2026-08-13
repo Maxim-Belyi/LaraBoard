@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('git_hubs', function (Blueprint $table) {
+        Schema::create('github_repositories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('owner');
-            $table->string('repo_name');
+            $table->string('repo');
             $table->string('primary_language');
             $table->boolean('is_active')->default(true);
 

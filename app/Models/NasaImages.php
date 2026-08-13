@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GitHub extends Model
+class NasaImages extends Model
 {
-    /** @use HasFactory<\Database\Factories\GitHubFactory> */
+    /** @use HasFactory<\Database\Factories\NasaImagesFactory> */
     use HasFactory;
 }
