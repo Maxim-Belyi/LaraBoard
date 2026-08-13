@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\WeatherRecords;
+use App\Models\WeatherRecord;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<WeatherRecords>
+ * @extends Factory<WeatherRecord>
  */
-class WeatherRecordsFactory extends Factory
+class WeatherRecordFactory extends Factory
 {
     /**
      * Define the model's default state.

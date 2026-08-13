@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('nasa_id')->unique();
             $table->string('title');
             $table->text('description');
-            $table->string('image_url');
+            $table->string('image_url')->unique();
             $table->dateTime('date_created');
         });
     }
