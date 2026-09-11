@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Nasa;
+use App\Models\NasaTopic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Nasa>
+ * @extends Factory<NasaTopic>
  */
 class NasaFactory extends Factory
 {

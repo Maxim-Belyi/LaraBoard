@@ -10,7 +10,7 @@ class WeatherRecord extends Model
 {
     /** @use HasFactory<\Database\Factories\WeatherRecordFactory> */
     use HasFactory;
-     protected $fillable = [
+    protected $fillable = [
         'location_id',
         'temp',
         'feels_like',
