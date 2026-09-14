@@ -45,6 +45,9 @@ return [
         'base_url' => 'https://images-api.nasa.gov',
     ],
 
+    'github' => [
+        'base_url' => 'https://api.github.com'
+    ],
 ];
 
 
