@@ -16,6 +16,7 @@ help:
 	@echo "  make dev      - Запустить Vite для сборки фронтенда в режиме разработки"
 	@echo "  make build    - Собрать фронтенд для продакшена"
 	@echo "  make seed     - Запустить сиды"
+	@echo "  make tinker   - Запустить консоль"
 
 up:
 	$(SAIL) up -d && make dev
@@ -45,3 +46,6 @@ build:
 
 seed:
 	$(SAIL) artisan db:seed
+
+tinker:
+	$(SAIL) artisan tinker
