@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class OpenWeatherService
 {
-    public function getWeatherByCoords(float $latitude, float $longitude)
+    public function getWeatherByCoords(float $latitude, float $longitude):array
     {
         $response = Http::baseUrl(config('services.openweather.base_url'))
             ->timeout(5)

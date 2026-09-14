@@ -38,7 +38,12 @@ return [
     'openweather' => [
         'key' => env('OPENWEATHER_API_KEY'),
         'base_url' => 'https://api.openweathermap.org/data/2.5',
-    ]
+    ],
+
+    'nasa' => [
+        'key' => env('NASA_API_KEY'),
+        'base_url' => 'https://images-api.nasa.gov',
+    ],
 
 ];
 
