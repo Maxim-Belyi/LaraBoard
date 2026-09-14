@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Contracts\DataFetcherInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 
-class NasaService
+class NasaService implements DataFetcherInterface
 {
     public function getNasaImages(string $query, int $limit = 10): array
     {
@@ -33,5 +35,10 @@ class NasaService
                     'image_url' => $link
                 ];
             })->toArray();
+    }
+
+    public function fetch(Model $model): array
+    {
+        return $this->getNasaImages($model->query, $model->limit);
     }
 }

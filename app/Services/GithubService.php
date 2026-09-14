@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Contracts\DataFetcherInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 
-class GithubService
+class GithubService implements DataFetcherInterface
 {
     public function getRepoStats(string $owner, string $repo): array
     {
@@ -21,5 +23,10 @@ class GithubService
             'primary_language' => $response->json('language'),
             'recorded_at' => now()
         ];
+    }
+
+    public function fetch(Model $model): array
+    {
+        return $this->getRepoStats($model->owner, $model->repo);
     }
 }
