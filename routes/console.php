@@ -24,4 +24,4 @@ Schedule::call(function () {
     NasaTopic::where('is_active', true)
         ->lazy()
         ->each(fn(NasaTopic $nasa) => FetchModelDataJob::dispatch($nasa));
-})->everyMinute();
+})->everyFiveMinutes();
