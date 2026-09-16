@@ -13,6 +13,7 @@ class GithubController extends Controller
         $repositories = GithubRepository::where('is_active', true)
             ->with(['metrics' => fn($query) => $query->latest()->limit(1)])
             ->get();
+        return response()->json($repositories);
     }
 
 

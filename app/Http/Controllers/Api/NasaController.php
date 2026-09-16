@@ -14,6 +14,7 @@ class NasaController extends Controller
         $topic = NasaTopic::where('is_active', true)
             ->with(['images' => fn($query) => $query->latest()->limit(5)])
             ->get();
+        return response()->json($topic);
     }
 
     public function show(NasaTopic $nasaTopic): JsonResponse
