@@ -16,7 +16,18 @@ class NasaTopic extends Model
         'is_active'
     ];
 
-    public function nasaImages():HasMany {
+    public function nasaImages(): HasMany
+    {
         return $this->hasMany(NasaImage::class);
+    }
+
+    public function saveFetchedData(array $data): void
+    {
+        foreach ($data as $imageData) {
+            $this->images()->updateOrCreate(
+                ['nasa_id' => $imageData['nasa_id']],
+                $imageData
+            );
+        }
     }
 }

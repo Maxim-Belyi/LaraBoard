@@ -18,7 +18,13 @@ class Location extends Model
         'is_active',
     ];
 
-    public function weatherRecords(): HasMany {
+    public function weatherRecords(): HasMany
+    {
         return $this->hasMany(WeatherRecord::class);
+    }
+
+    public function saveFetchedData(array $data): void
+    {
+        $this->weatherRecords()->create($data);
     }
 }

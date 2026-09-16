@@ -18,8 +18,13 @@ class GithubRepository extends Model
         'is_active',
     ];
 
-    public function githubRepoStatuses(): HasMany {
+    public function githubRepoStatuses(): HasMany
+    {
         return $this->hasMany(GithubRepoStatus::class);
     }
 
+    public function saveFetchedData(array $data): void
+    {
+        $this->githubRepoStatuses()->create($data);
+    }
 }
