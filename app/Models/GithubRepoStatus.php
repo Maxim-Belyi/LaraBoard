@@ -11,6 +11,8 @@ class GithubRepoStatus extends Model
     /** @use HasFactory<\Database\Factories\GithubRepoStatusFactory> */
     use HasFactory;
 
+    protected $table = 'github_repo_stats';
+
     protected $fillable = [
         'github_repository_id',
         'stars_count',

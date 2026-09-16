@@ -24,7 +24,7 @@ class NasaTopic extends Model
     public function saveFetchedData(array $data): void
     {
         foreach ($data as $imageData) {
-            $this->images()->updateOrCreate(
+            $this->nasaImages()->updateOrCreate(
                 ['nasa_id' => $imageData['nasa_id']],
                 $imageData
             );

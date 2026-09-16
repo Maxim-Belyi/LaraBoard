@@ -11,7 +11,7 @@ class GithubController extends Controller
     public function index(): JsonResponse
     {
         $repositories = GithubRepository::where('is_active', true)
-            ->with(['metrics' => fn($query) => $query->latest()->limit(1)])
+            ->with(['githubRepoStatuses' => fn($query) => $query->latest()->limit(1)])
             ->get();
         return response()->json($repositories);
     }
@@ -20,7 +20,7 @@ class GithubController extends Controller
     public function show(GithubRepository $githubRepository): JsonResponse
     {
         return response()->json(
-            $githubRepository->load(['metrics' => fn($query) => $query->latest()->limit(10)])
+            $githubRepository->load(['githubRepoStatuses' => fn($query) => $query->latest()->limit(10)])
         );
     }
 }

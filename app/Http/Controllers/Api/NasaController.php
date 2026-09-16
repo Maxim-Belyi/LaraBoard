@@ -12,7 +12,7 @@ class NasaController extends Controller
     public function index(): JsonResponse
     {
         $topic = NasaTopic::where('is_active', true)
-            ->with(['images' => fn($query) => $query->latest()->limit(5)])
+            ->with(['nasaImages' => fn($query) => $query->latest()->limit(5)])
             ->get();
         return response()->json($topic);
     }
@@ -20,7 +20,7 @@ class NasaController extends Controller
     public function show(NasaTopic $nasaTopic): JsonResponse
     {
         return response()->json(
-            $nasaTopic->load('images')
+            $nasaTopic->load('nasaImages')
         );
     }
 }
