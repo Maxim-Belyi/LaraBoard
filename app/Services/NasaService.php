@@ -39,6 +39,6 @@ class NasaService implements DataFetcherInterface
 
     public function fetch(Model $model): array
     {
-        return $this->getNasaImages($model->query, $model->limit);
+        return $this->getNasaImages($model->query_text ?? 'space', 10);
     }
 }

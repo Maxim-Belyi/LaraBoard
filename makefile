@@ -15,8 +15,11 @@ help:
 	@echo "  make logs     - Посмотреть логи контейнеров"
 	@echo "  make dev      - Запустить Vite для сборки фронтенда в режиме разработки"
 	@echo "  make build    - Собрать фронтенд для продакшена"
-	@echo "  make seed     - Запустить сиды"
-	@echo "  make tinker   - Запустить консоль"
+	@echo "  make seed         - Запустить сиды"
+	@echo "  make tinker       - Запустить консоль"
+	@echo "  make queue        - Запустить воркер очередей"
+	@echo "  make schedule     - Запустить планировщик (фоновый процесс)"
+	@echo "  make schedule-run - Принудительно запустить задачи планировщика (разово)"
 
 up:
 	$(SAIL) up -d && make dev
@@ -49,3 +52,12 @@ seed:
 
 tinker:
 	$(SAIL) artisan tinker
+
+queue:
+	$(SAIL) artisan queue:work
+
+schedule:
+	$(SAIL) artisan schedule:work
+
+schedule-run:
+	$(SAIL) artisan schedule:run
