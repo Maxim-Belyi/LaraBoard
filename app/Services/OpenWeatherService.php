@@ -28,7 +28,7 @@ class OpenWeatherService implements DataFetcherInterface
             'wind_speed' => $response->json('wind.speed'),
             'description' => $response->json('weather.0.description'),
             'icon' => $response->json('weather.0.icon'),
-            'dt' => $response->json('dt')
+            'recorded_at' => \Carbon\Carbon::createFromTimestamp($response->json('dt')),
         ];
     }
     public function fetch(Model $model): array
